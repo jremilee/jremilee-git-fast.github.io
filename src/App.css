@@ -140,18 +140,36 @@
 }
 
 /* =========================
-   PROJECTS GRID (FIXED)
-   Matches your reference collage
+   PROJECTS (TWO COLUMNS)
+   Simple left / right columns with proportional tiles
    ========================= */
 
-.projectsGrid{
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
+.projectsCols{
+  display: flex;
   gap: 22px;
   width: 100%;
-  max-width: 880px;
-  margin: 0 auto 46px;
+  max-width: 920px;
+  margin: 0 auto 46px; /* centers both columns */
   align-items: stretch;
+  height: var(--projects-height, 850px); /* tweakable total height so columns form a rectangle */
+  justify-content: center;
+}
+
+.projectsCol{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Make left column 30% wider than right */
+.projectsCol--left{
+  flex: 1.3;
+}
+
+.projectsCol--right{
+  flex: 1;
 }
 
 /* each tile is a card */
@@ -174,15 +192,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;                     /* creates the “frame” around the image */
   box-sizing: border-box;
 }
 
-/* constrain images */
+/* constrain images - keep full image visible */
 .proj__thumb img{
   width: 100%;
   height: 100%;
-  object-fit: contain;               /* key: prevents cropping + giant overflow */
+
+  object-position: center;
   display: block;
 }
 
@@ -230,34 +248,30 @@
    techspace: bottom-right
    ========================= */
 
+/* Tile sizing - flex heights. Left column total = right column total (both sum to 3) */
 #sharp{
-  grid-column: 1;
-  grid-row: 1;
-  aspect-ratio: 16 / 8;
+  flex: 1.2 1 0;
+  width: 100%;
 }
 
 #miai{
-  grid-column: 2;
-  grid-row: 1;
-  aspect-ratio: 16 / 10;
+  flex: .8 1 0;
+  width: 100%;
 }
 
 #thirstylion{
-  grid-column: 1;
-  grid-row: 2 / span 2;
-  aspect-ratio: 10 / 11;
+  flex: 2 1 0;
+  width: 100%;
 }
 
 #alterea{
-  grid-column: 2;
-  grid-row: 2;
-  aspect-ratio: 16 / 10;
+  flex: 1 1 0;
+  width: 100%;
 }
 
 #techspace{
-  grid-column: 2;
-  grid-row: 3;
-  aspect-ratio: 16 / 10;
+  flex: 1 1 0;
+  width: 100%;
 }
 
 /* =========================
@@ -265,15 +279,20 @@
    ========================= */
 
 @media (max-width: 760px){
-  .projectsGrid{
-    grid-template-columns: 1fr;
+  .projectsCols{
+    flex-direction: column;
     gap: 16px;
+    height: auto;
   }
 
-  /* let them flow naturally */
+  .projectsCol{
+    flex-direction: column;
+  }
+
+  /* let them flow naturally and restore friendly aspect ratios */
   #sharp, #miai, #thirstylion, #alterea, #techspace{
-    grid-column: auto;
-    grid-row: auto;
+    flex: none;
+    width: 100%;
     aspect-ratio: 16 / 10;
   }
 
@@ -333,18 +352,15 @@
     width: min(980px, calc(100% - 28px));
   }
 
-  .projectsGrid{
-    grid-template-columns: 1fr;
+  .projectsCols{
+    flex-direction: column;
+    gap: 16px;
   }
 
   /* Stack projects nicely on mobile */
-  .proj:nth-child(1),
-  .proj:nth-child(2),
-  .proj:nth-child(3),
-  .proj:nth-child(4),
-  .proj:nth-child(5){
-    grid-column: 1;
-    grid-row: auto;
+  .projectsCol .proj-left,
+  .projectsCol .proj-right{
+    width: 100%;
   }
 
   .proj--wide,

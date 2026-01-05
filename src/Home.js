@@ -39,83 +39,87 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <div className="projectsGrid">
-          {/* Project 1 */}
-          <a
-            id="sharp"
-            href="#"
-            className="proj-left"
-            aria-label="Accessibility Audit project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
-            </div>
+        <div className="projectsCols">
+          <div className="projectsCol projectsCol--left">
+            {/* Project 1 */}
+            <a
+              id="sharp"
+              href="#"
+              className="proj-left"
+              aria-label="Accessibility Audit project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/sharp-consolidation.png" alt="Accessibility Audit project" />
+              </div>
 
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Accessibility Audit</div>
-            </div>
-          </a>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Accessibility Audit</div>
+              </div>
+            </a>
 
-          {/* Project 2 */}
-          <a
-            id="miai"
-            href="#"
-            className="proj-right"
-            aria-label="Research Dashboard project"
-          >
-            <div className="proj__thumb">   
-              <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Research Dashboard</div>
-            </div>
-          </a>
+            {/* Project 3 */}
+            <a
+              id="thirstylion"
+              href="#"
+              className="proj-left"
+              aria-label="Mobile UX Case Study project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/thirstylion-phone.png" alt="Mobile UX Case Study project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Mobile UX Case Study</div>
+              </div>
+            </a>
+          </div>
 
-          {/* Project 3 */}
-          <a
-            id="thirstylion"
-            href="#"
-            className="proj-left"
-            aria-label="Mobile UX Case Study project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/thirstylion-phone.png" alt="Mobile UX Case Study project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Mobile UX Case Study</div>
-            </div>
-          </a>
+          <div className="projectsCol projectsCol--right">
+            {/* Project 2 */}
+            <a
+              id="miai"
+              href="#"
+              className="proj-right"
+              aria-label="Research Dashboard project"
+            >
+              <div className="proj__thumb">   
+                <img src="/images/miai-laptop.png" alt="Research Dashboard project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Research Dashboard</div>
+              </div>
+            </a>
 
-          {/* Project 4 */}
-          <a
-            id="alterea"
-            href="#"
-            className="proj-right"
-            aria-label="Gamified Learning Tool project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
-            </div>
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Gamified Learning Tool</div>
-            </div>
-          </a>
+            {/* Project 4 */}
+            <a
+              id="alterea"
+              href="#"
+              className="proj-right"
+              aria-label="Gamified Learning Tool project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/alterea-tablet.png" alt="Gamified Learning Tool project" />
+              </div>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Gamified Learning Tool</div>
+              </div>
+            </a>
 
-          {/* Project 5 */}
-          <a
-            id="techspace"
-            href="#"
-            className="proj-right"
-            aria-label="Space Threads App project"
-          >
-            <div className="proj__thumb">
-              <img src="/images/techspace.png" alt="Space Threads App project" />
-            </div>
+            {/* Project 5 */}
+            <a
+              id="techspace"
+              href="#"
+              className="proj-right"
+              aria-label="Space Threads App project"
+            >
+              <div className="proj__thumb">
+                <img src="/images/techspace.png" alt="Space Threads App project" />
+              </div>
 
-            <div className="proj__overlay">
-              <div className="proj__overlayInner">Space Threads App</div>
-            </div>
-          </a>
+              <div className="proj__overlay">
+                <div className="proj__overlayInner">Space Threads App</div>
+              </div>
+            </a>
+          </div>
         </div>
 
 
