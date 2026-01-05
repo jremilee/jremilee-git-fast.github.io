@@ -14,7 +14,7 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .content{
@@ -79,56 +79,33 @@
 
 .hero__subtitle{
   margin: 0;
-  max-width: 46ch;
+  max-width: 55ch;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
 }
 
 /* subtle vignette like your screenshot */
-.hero__right{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 230px;
-}
 
-
-.handPlaceholder{
-  width: min(360px, 100%);
-  aspect-ratio: 16 / 10;
-  border-radius: 16px;
-  background:
-    radial-gradient(ellipse at 35% 30%, rgba(0,0,0,0.10), rgba(0,0,0,0.02) 55%, rgba(0,0,0,0.00) 72%),
-    linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.00));
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.handPlaceholder::after{
-  content: "";
+/* full-width decorative background element for the hand image */
+.hero__bg{
   position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 45% 40%, rgba(255,255,255,0.65), rgba(255,255,255,0) 55%);
-  transform: rotate(-10deg);
-  pointer-events: none;
+  transform: translateX(10%);
+  bottom: 45%; /* nudged relative to viewport bottom */
+  width: 100vw; /* span the full viewport width */
+  /* make the hand ~30% smaller (default is 34vh) */
+  height: var(--hero-bg-height, 50vh);
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none; /* decorative only */
 }
 
-.handPlaceholder__label{
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-size: 12px;
-  color: rgba(0,0,0,0.45);
-  background: rgba(255,255,255,0.65);
-  border: 1px solid rgba(0,0,0,0.06);
-  padding: 6px 10px;
-  border-radius: 999px;
+.hero__left{
+  position: relative;
+  z-index: 2; /* keep text above the hand image */
 }
-
 /* Section title */
 .sectionTitle{
   text-align: center;
@@ -153,6 +130,7 @@
   align-items: stretch;
   height: var(--projects-height, 850px); /* tweakable total height so columns form a rectangle */
   justify-content: center;
+  margin-top: 200px;
 }
 
 .projectsCol{
@@ -250,7 +228,7 @@
 
 /* Tile sizing - flex heights. Left column total = right column total (both sum to 3) */
 #sharp{
-  flex: 1.2 1 0;
+  flex: 1.3 1 0;
   width: 100%;
 }
 

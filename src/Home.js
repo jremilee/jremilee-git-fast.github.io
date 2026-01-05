@@ -22,6 +22,7 @@ export default function Home() {
       <main className="content" id="home">
         {/* Hero */}
         <section className="hero">
+
           <div className="hero__left">
             <h1 className="hero__title">Hi! I’m June, a UX designer based in NYC</h1>
             <p className="hero__subtitle">
@@ -30,12 +31,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="hero__right" aria-label="Hero image placeholder">
-            {/* Replace this div with your hand image later */}
-            <div className="handPlaceholder">
-              <div className="handPlaceholder__label">Hand image placeholder</div>
-            </div>
+        
+          {/* hand image */}
+          <div className="hero__bg" aria-hidden="true">
+            <img src="/images/hand.png" alt="Image of hand holding minature objects" />
           </div>
+
         </section>
 
         {/* Projects */}
@@ -65,7 +66,7 @@ export default function Home() {
               aria-label="Mobile UX Case Study project"
             >
               <div className="proj__thumb">
-                <img src="/images/thirstylion-phone.png" alt="Mobile UX Case Study project" />
+                <img src="/images/thirstylion.png" alt="Mobile UX Case Study project" />
               </div>
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Mobile UX Case Study</div>
