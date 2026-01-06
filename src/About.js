@@ -37,43 +37,45 @@ export default function About() {
           </div>
         </section>
 
-        {/* THUMBNAIL STRIP */}
-        <section className="aboutStrip" aria-label="Highlights">
-          <div className="aboutStrip__inner">
-            <article className="aboutCard">
-              <div className="aboutCard__thumb">
-                <img
-                  src="/thumb-1.png"
-                  alt="Classwork highlight"
-                  className="aboutCard__img"
-                />
-              </div>
-              <div className="aboutCard__label">Classwork</div>
-            </article>
+        {/* HIGHLIGHT BOXES */}
+        <section className="aboutBoxes" aria-label="Highlights">
+          <div className="aboutBoxes__inner">
+            <div className="aboutBox aboutBox--list">
+              <ul className="aboutBox__list">
+                <li>TECHNOLOGY, RELIGION, FUTURE</li>
+                <li>USER INTERFACE DESIGN</li>
+                <li>PHILOSOPHY OF MIND</li>
+                <li>PSYCHOLOGY OF IMAGINATION</li>
+                <li>INTRODUCTION TO LINGUISTICS</li>
+              </ul>
+            </div>
 
-            <article className="aboutCard">
-              <div className="aboutCard__thumb">
-                <img
-                  src="/thumb-2.png"
-                  alt="Published works highlight"
-                  className="aboutCard__img"
-                />
-              </div>
-              <div className="aboutCard__label">Published works</div>
-            </article>
+            <div className="aboutBox aboutBox--image">
+              <img className="aboutBox__img" src="/images/brainbanter.png" alt="Brain Banter placeholder" />
+              <div className="aboutBox__caption">My favorite extracurricular</div>
+            </div>
 
-            <article className="aboutCard">
-              <div className="aboutCard__thumb">
-                <img
-                  src="/thumb-3.png"
-                  alt="Research highlight"
-                  className="aboutCard__img"
-                />
-              </div>
-              <div className="aboutCard__label">Research</div>
-            </article>
+            <div className="aboutBox aboutBox--text">
+              <h3 className="aboutBox__title">Published works</h3>
+              <ul className="aboutBox__bullets">
+                <li>Tart, poem (Turning the Corner Erber & Wein Publishing)</li>
+                <li>Illusion of Inadequacy, essay (finalist for National PTA Reflections)</li>
+                <li>Dirty Rain, poem about anti-Asian sentiment (published in Anthology)</li>
+              </ul>
+            </div>
+
+            <div className="aboutBox aboutBox--text">
+              <h3 className="aboutBox__title">Research topics</h3>
+              <ul className="aboutBox__bullets">
+                <li>Bilingualism & Mental Imagery</li>
+                <li>Perception & memory of stimuli in VR</li>
+                <li>Impact of text vs speech in learning</li>
+              </ul>
+            </div>
           </div>
         </section>
+
+
 
         {/* EDUCATION */}
         <section className="aboutSection" aria-label="Education">
