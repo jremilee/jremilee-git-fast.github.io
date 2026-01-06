@@ -1,5 +1,6 @@
 // Home.js
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -17,12 +18,12 @@ export default function Home() {
       <header className="nav">
         <div className="nav__inner">
           <nav className="nav__links" aria-label="Primary">
-            <a className="nav__link nav__link--active" href="#home">
+            <Link className="nav__link nav__link--active" to="/">
               Home
-            </a>
-            <a className="nav__link" href="#about">
+            </Link>
+            <Link className="nav__link" to="/about">
               About
-            </a>
+            </Link>
           </nav>
         </div>
         <div className="nav__divider" />
