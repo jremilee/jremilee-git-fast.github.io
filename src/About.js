@@ -14,8 +14,8 @@ export default function About() {
             <div className="aboutHero__left">
               {/* Replace with your image path in /public, e.g. /about-finger.png */}
               <img
-                className="aboutHero__image"
-                src="/about-finger-placeholder.png"
+                className="finger__image"
+                src="/images/finger-comp-transparent.png"
                 alt="Hand holding a tiny laptop"
               />
             </div>

@@ -467,7 +467,7 @@
 .aboutMain {
   max-width: 980px;
   margin: 0 auto;
-  padding: 22px 18px 64px;
+  padding: 0px 18px 64px;
 }
 
 /* HERO */
@@ -482,11 +482,12 @@
   align-items: center;
 }
 
-.aboutHero__image {
+.finger__image {
   width: 100%;
   height: auto;
   display: block;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.12));
+  transform: translateX(70px);
 }
 
 .aboutHero__title {
