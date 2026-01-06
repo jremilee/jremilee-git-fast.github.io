@@ -1,7 +1,16 @@
 // Home.js
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Home() {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play()
+      .then(() => console.log('brain video played'))
+      .catch((e) => console.error('brain video play failed', e));
+  }, []);
+
   return (
     <div className="home">
       {/* Top Nav */}
@@ -129,28 +138,36 @@ export default function Home() {
           <div className="other__row">
             <span className="other__text">OTHER CREATIVE</span>
 
-            {/* Simple brain doodle as inline SVG (optional). Replace/remove if you want. */}
+            {/* Decorative looping video (muted, autoplay, loop). */}
             <span className="other__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 120 90"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="brainSvg"
+              <video
+                ref={videoRef}
+                className="other__video"
+                autoPlay
+                muted
+                playsInline
+                loop
+                aria-hidden="true"
+                poster="/images/brain-poster.png"
+                onError={(e) => {
+                  const v = e.currentTarget;
+                  v.style.display = 'none';
+                  const img = v.nextElementSibling;
+                  if (img) img.style.display = 'block';
+                }}
+                preload="metadata"
               >
-                <path
-                  d="M24 46c-8-6-9-17-2-24 7-7 18-6 24 2 6-8 18-9 26-2 7-7 18-8 25 0 7 7 6 18-2 24 8 6 9 17 2 24-7 7-18 6-24-2-6 8-18 9-26 2-7 7-18 8-25 0-7-7-6-18 2-24Z"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M38 26c-5 6-5 14 0 20m12-26c-6 9-6 21 0 30m12-30c-6 9-6 21 0 30m12-24c5 6 5 14 0 20"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-              </svg>
+                <source src="/videos/brain.mp4" type="video/mp4" />
+                <source src="/videos/brain.webm" type="video/webm" />
+
+              </video>
+
+              <img
+                className="other__videoPoster"
+                src="/images/brain-poster.png"
+                alt="Brain doodle"
+                style={{ display: 'none' }}
+              />
             </span>
 
             <span className="other__text">WORKS</span>

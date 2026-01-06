@@ -258,7 +258,7 @@
 }
 
 #alterea{
-  flex: 1 .8 0;
+  flex: .8 1 0;
   width: 100%;
 }
 
@@ -297,22 +297,37 @@
   .proj__thumb{
     padding: 14px;
   }
+
+  /* revert other block sizes on small screens */
+  .other__video, .other__videoPoster, .brainSvg{
+    width: 72px;
+  }
+
+  .other__text{
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
+  .other__row{
+    gap: 18px;
+  }
 }
 
 /* Other creative works */
 .other{
   padding-top: 46px;
+  padding-bottom: 20px;
 }
 
 .other__row{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 36px; /* doubled gap */
 }
 
 .other__text{
-  font-size: 12px;
+  font-size: 24px; /* doubled */
   letter-spacing: 0.16em;
   color: rgba(0,0,0,0.75);
   font-weight: 600;
@@ -323,17 +338,36 @@
   color: rgba(0,0,0,0.65);
 }
 
+.other__video{
+  width: 144px; /* doubled */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.09);
+}
+
+.other__videoPoster{
+  width: 144px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.09);
+}
+
 .brainSvg{
-  width: 72px;
+  width: 144px;
   height: auto;
 }
+
+
 
 /* Responsive */
 @media (max-width: 860px){
   .hero{
     grid-template-columns: 1fr;
     gap: 18px;
-    padding-top: 22px;
+    padding-top: 10px;
   }
   .hero__subtitle{
     max-width: 60ch;
