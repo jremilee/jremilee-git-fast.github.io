@@ -120,21 +120,25 @@ export default function About() {
               <div className="aboutBox__caption">My favorite extracurricular</div>
             </div>
 
-            <div className="aboutBox aboutBox--text">
+            <div id="published" className="aboutBox aboutBox--text aboutBox--wide">
               <h3 className="aboutBox__title">Published works</h3>
               <ul className="aboutBox__bullets">
-                <li>Tart, poem (Turning the Corner Erber & Wein Publishing)</li>
-                <li>Illusion of Inadequacy, essay (finalist for National PTA Reflections)</li>
-                <li>Dirty Rain, poem about anti-Asian sentiment (published in Anthology)</li>
+                <li>§ Tart (Turning the Corner Erber & Wein Publishing)</li>
+                <li>§ Illusion of Inadequacy, essay (finalist for National PTA Reflections)</li>
+                <li>§ Dirty Rain, poem about anti-Asian sentiment during Covid (published in Anthology)</li>
+                <li>§ Illusion of Inadequacy and All 10 were part of an anthology which won four national and state level awards (CSPA Crown Award, NSPA All American’s highest rating with four distinctions, ASPA first place distinction, and the ESSPA 1st Place Gold Award)  </li>
               </ul>
             </div>
 
             <div className="aboutBox aboutBox--text">
-              <h3 className="aboutBox__title">Research topics</h3>
-              <ul className="aboutBox__bullets">
+              <h3 className="aboutBox__title">Research Topics</h3>
+              <ul className="aboutBox__bullets aboutBox__bullets-research">
+                <br/>
                 <li>Bilingualism & Mental Imagery</li>
+                <br/>
                 <li>Perception & memory of stimuli in VR</li>
-                <li>Impact of text vs speech in learning</li>
+                <br/>
+                <li>Impact of text vs speech, and voice gender on learning and source monitoring </li>
               </ul>
             </div>
           </div>

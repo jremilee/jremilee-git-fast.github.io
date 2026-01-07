@@ -8,7 +8,7 @@ export default function Home() {
     const v = videoRef.current;
     if (!v) return;
     v.play()
-      .then(() => console.log('brain video played'))
+      .then(() => console.log('S video played'))
       .catch((e) => console.error('brain video play failed', e));
   }, []);
 
