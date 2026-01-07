@@ -1,7 +1,68 @@
 // About.js
 import Nav from "./Nav";
+import { useEffect, useRef, useState } from "react";
 
 export default function About() {
+  const trackRef = useRef(null);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const getGap = () => {
+      const cs = getComputedStyle(track);
+      const gapVal = parseFloat(cs.gap || cs.columnGap || "0");
+      return isNaN(gapVal) ? 0 : gapVal;
+    };
+    let gap = getGap();
+
+    let x = 0;
+    const speed = 0.6; // px per frame (~36 px/s)
+    let rafId;
+
+    // Seed: put the last card before the first so the left edge is never empty
+    const seed = () => {
+      const last = track.lastElementChild;
+      if (!last) return;
+      const w = last.getBoundingClientRect().width;
+      track.insertBefore(last, track.firstChild);
+      x = -(w + gap);
+      track.style.transform = `translateX(${x}px)`;
+    };
+    seed();
+
+    const loop = () => {
+      rafId = requestAnimationFrame(loop);
+      if (paused) return;
+
+      x += speed;
+
+      // Wrap: move the last card to front BEFORE any gap appears
+      while (true) {
+        const last = track.lastElementChild;
+        if (!last) break;
+        const w = last.getBoundingClientRect().width;
+        // Change condition: trigger when x reaches 0 (not when it exceeds w+gap)
+        if (x < 0) break;
+        track.insertBefore(last, track.firstChild);
+        x -= w + gap;
+      }
+
+      track.style.transform = `translateX(${x}px)`;
+    };
+
+    rafId = requestAnimationFrame(loop);
+
+    const onResize = () => { gap = getGap(); };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [paused]);
+
   return (
     <div className="aboutPage">
       {/* Top Nav */}
@@ -38,10 +99,14 @@ export default function About() {
         </section>
 
         {/* HIGHLIGHT BOXES */}
-        <section className="aboutBoxes" aria-label="Highlights">
-          <div className="aboutBoxes__inner">
+        <section
+          className="aboutBoxes"
+          aria-label="Highlights"
+        >
+          <div className="aboutBoxes__inner" ref={trackRef}>
             <div className="aboutBox aboutBox--list">
               <ul className="aboutBox__list">
+                <li className="aboutBox__title">My Favorite Classes</li>
                 <li>TECHNOLOGY, RELIGION, FUTURE</li>
                 <li>USER INTERFACE DESIGN</li>
                 <li>PHILOSOPHY OF MIND</li>
