@@ -42,9 +42,9 @@ export default function Home() {
         <div className="projectsCols">
           <div className="projectsCol projectsCol--left">
             {/* Project 1 */}
-            <a
+            <Link
               id="sharp"
-              href="#"
+              to = "/sharp"
               className="proj-left"
               aria-label="Sharp Electronics"
             >
@@ -55,7 +55,7 @@ export default function Home() {
               <div className="proj__overlay">
                 <div className="proj__overlayInner">Sharp Electronics</div>
               </div>
-            </a>
+            </Link>
 
             {/* Project 3 */}
             <Link

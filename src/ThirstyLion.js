@@ -11,13 +11,20 @@ export default function ThirstyLion() {
       <Nav />
       <div className="tlPage">
         <main className="content" id="thirstylion">
+          
+        <div className="tl__bannerContainer">
+          <img src="/images/thirstylion-banner.webp" alt="Thirsty Lion App Banner" className="tl__banner"/>
+        </div>
+
         <header className="tl__header">
           <h1 className="tl__title">Thirsty Lion</h1>
           <p className="tl__subtitle">UI Design | Prototyping | Frontend Development</p>  
         </header>
 
         <section className="tl__section" aria-label="Project Overview">
-          <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> A crowdsourced platform for real-time water fountain ratings at Columbia University. </p></h2>
+          <h2 className="tl__sectionTitle"><p className="tl__subtitleD"> A crowdsourced platform for real-time water fountain ratings at Columbia University. </p></h2>
+        
+
           <p><strong>The Problem:</strong> Columbia students often encounter broken, slow, or warm water fountains, leading to frustration and dehydration. Even when familiar with the building, students often struggle to find the next best water fountain especially since fountains are not listed on building maps.</p>
           <p><strong>Our Solution:</strong> A crowdsourced platform where students rate and track fountain performance (flow speed, temperature, and filter status) in real-time.</p>
           <p>Team: June Lee, Jeffrey Roh, Madeline Ou, Jadyn Park</p>
@@ -86,7 +93,7 @@ export default function ThirstyLion() {
         <section className="tl__section" aria-label="Risk Mitigation & Future Roadmap">
           <h2 className="tl__sectionTitle">05. Risk Mitigation & Future Roadmap</h2>
           <p><strong>Current Strategy:</strong> We transitioned from physical fountain stickers (a sticker saying “fountain 1” on physical fountain) to an <strong>interactive digital map</strong> with photo-references of each fountain.</p>
-          <p><strong>Crowdsourcing:</strong> Implementing a "Verification" system to ensure crowdsourced data remains accurate even as student traffic fluctuates.</p>
+          <p><strong>Crowdsourcing:</strong> We discussed implementing a rolling average (average of most recent data) so crowdsourced data remains accurate even as student traffic and ratings fluctuate.</p>
         </section>
 
         <section className="tl__section" aria-label="Technical Stack & Contributions">

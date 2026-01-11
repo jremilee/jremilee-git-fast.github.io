@@ -10,116 +10,91 @@ export default function Sharp() {
     <>
       <Nav />
       <div className="tlPage">
-        <main className="content" id="thirstylion">
+        <main className="content" id="sharp">
         <header className="tl__header">
-          <h1 className="tl__title">Thirsty Lion</h1>
-          <p className="tl__subtitle">UI Design | Prototyping | Frontend Development</p>  
+          <h1 className="tl__title">SHARP Web Consolidation</h1>
+          <p className="tl__subtitle">UI Design | SEO | Google Analytics</p>  
         </header>
 
         <section className="tl__section" aria-label="Project Overview">
-          <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> A crowdsourced platform for real-time water fountain ratings at Columbia University. </p></h2>
-          <p><strong>The Problem:</strong> Columbia students often encounter broken, slow, or warm water fountains, leading to frustration and dehydration. Even when familiar with the building, students often struggle to find the next best water fountain especially since fountains are not listed on building maps.</p>
-          <p><strong>Our Solution:</strong> A crowdsourced platform where students rate and track fountain performance (flow speed, temperature, and filter status) in real-time.</p>
-          <p>Team: June Lee, Jeffrey Roh, Madeline Ou, Jadyn Park</p>
+          <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>
+          <p><strong>The Problem:</strong> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 
+            Sharp’s SBS site and Sharp Business site had pages with mostly identical content. However, there was still some SBS-specific content that was not posted on the business site.</p>
+          <p><strong>Our Solution:</strong> <br/> 1. SBS-specific content was edited to be generalized and suitable for posting on the business site.  
+            <br/> 2. The four SBS-specific pages would be consolidated into a single SBS page on the business site.</p>
+          <p>Team: Sharp Marketing Team </p>
 
-          <div className="tl__img" aria-label="Overview image ">
-            <img src="/images/thirstylion-allscreens-pink.png" alt="Figma layout of all screens of the Thirsty Lion app" />
+          <div className="tl__img2" aria-label="Overview image ">
+            <img src="/images/sharp-1.png" alt="Merging Sharp SBS site content into Sharp Business site" />
           </div>
         </section>
 
         <section className="tl__section" aria-label="Discovery & Contextual Inquiry">
-          <h2 className="tl__sectionTitle">01. Discovery & Contextual Inquiry</h2>
-          <p>
-            We began by investigating why students were dissatisfied with campus hydration. Through contextual inquiries, we discovered that in addition to good water pressure, water <strong>quality</strong> was also important to students (e.g. temperature, taste).
+          <h2 className="tl__sectionTitle">01. Designing the Webpage First Draft</h2>
+          <p className="tl__list">
+            I designed the first draft on Adobe XD by combining the four primary SBS pages into a single “to the point” page.  Explanations for each element is provided below. 
           </p>
-          <p><strong>Key Insight:</strong> Students are willing to walk further if they are guaranteed a high-pressure, cold-water refill.</p>
+          <p><strong>Note:</strong> Design decisions explained in the image below.</p>
 
           <div className="tl__img" aria-label="Discovery image ">
-            <img src="/images/thirstylion-postits.png" alt="Post-it notes from contextual inquiry" />
+            <img src="/images/sharp-2.png" alt="first draft of consolidation page" />
+          </div>
+
+          <div className="tl__img" aria-label="Consolidation first draft">
+            <img src="/images/sharp-3.png" alt="second half of first draft of consolidation page" />
           </div>
         </section>
 
-        <section className="tl__section" aria-label="Smoke & Mirrors Prototype">
-          <h2 className="tl__sectionTitle">02. The "Smoke & Mirrors" Prototype</h2>
-          <ul className="tl__list">
-            <li><strong>The Setup:</strong> Placed QR-coded posters at 8 different fountains at Columbia's most popular library.</li>
-            <li><strong>The System:</strong> QR codes led to a Google Form (for rating) and a live Spreadsheet (displaying average scores).</li>
-            <li><strong>The Result:</strong> <strong>51 organic responses</strong> in a short window. <strong>80% of users</strong> confirmed they would switch fountains based on our data.</li>
-          </ul>
+        <section className="tl__section" aria-label="final draft">
+          <h2 className="tl__sectionTitle">02. Webpage final draft</h2>
+          <p className="tl__list">
+            Collaborating with the website-wide color redesign, the interface was changed to match the beige theme.  
+            I also used this iteration to minimize cognitive load, distilling the experience down to its most pertinent, 
+            high-impact features by reducing copy and other less critical elements.
+          </p>
 
-          <div className="tl__img" aria-label="Smoke & Mirrors Prototype image">
-            <img src="/images/thirstylion-excel.png" alt="Excel spreadsheet with contextual inquiry data" />
+          <div className="tl__img" aria-label="Final draft image">
+            <img src="/images/sharp-4.png" alt="final draft screenshot" />
           </div>
+
         </section>
 
         <section className="tl__section" aria-label="Data-Driven Iteration">
-          <h2 className="tl__sectionTitle">03. Data-Driven Iteration</h2>
-          <ul className="tl__list">
-            <li><strong>Negativity Bias:</strong> Users report bad fountains more often than good ones. We needed to gamify "good" reports to keep data fresh.</li>
-            <li><strong>Broken Infrastructure:</strong> We discovered "green" filter lights don't always mean high pressure, leading us to add "Flow Strength" as a primary metric.</li>
-            <li><strong>Visibility Gap:</strong> Fountains on higher floors had zero engagement, proving the need for an <strong>In-App Map</strong> to surface hidden "gem" fountains.</li>
-          </ul>
+          <h2 className="tl__sectionTitle">03. Other SBS content </h2>
+          <p className="tl__list">
+           In addition to the main SBS page, I helped redesign and modify other business pages for improved SEO copywriting and clearer visual flow while ensuring accessibility compliance.
+          </p>
+
+          <div className="tl__img2" aria-label="Low-fidelity mockup">
+              <img src="/images/sharp-5.png" alt="High-fidelity mockup 1 of the Thirsty Lion app" />
+            </div>
         </section>
 
         <section className="tl__section" aria-label="Design & Prototyping">
-          <h2 className="tl__sectionTitle">04. Design & Prototyping</h2>
-          <p>
-            Moving from low-fidelity sketches to high-fidelity Figma mockups, we focused on a "speed-first" UI for mobile devices. This way students filling water can easily scan a QR code on the fountains with their phone and they are not obligated to leave reviews, so we designed the interface to be tactile and efficient to lead to the least amount of resistance.
+          <h2 className="tl__sectionTitle">04. Google Analytics & SEO Improvements</h2>
+          <p> I used Google Analytics data (e.g. traffic reports) to identify and remove outdated, low-quality, and redundant pages, improving the website's overall quality and relevance.  
+            I implemented best SEO practices when editing content for the new webpages, including strategic keyword placement to enhance searchability and internal linking. 
+            Merging the sites was successful in increasing traffic to Sharp’s business site. Sharp will monitor the pages after launch and make adjustments as needed.
           </p>
 
-          <ul className="tl__list">
-            <li><strong>Fountain Query:</strong> Quick search by building for water fountain floor and rating.</li>
-            <li><strong>Building Map:</strong> Visual guide to locate fountains without physical signage.</li>
-            <li><strong>Rating System:</strong> A 1–5 scale for overall quality, and a section focusing on the "Big Three": Temperature, Taste, and Filter Status.</li>
-          </ul>
-
-            <div className="tl__img2" aria-label="Low-fidelity mockup">
-              <img src="/images/thirstylion-lowfid.png" alt="High-fidelity mockup 1 of the Thirsty Lion app" />
-            </div>
             
             <div className="tl__img2" aria-label="High-fidelity mockup">
-              <img src="/images/thirstylion-highfid.png" alt="High-fidelity mockup 2 of the Thirsty Lion app" />
+              <img src="/images/sharp-googleanalytics.png" alt="High-fidelity mockup 2 of the Thirsty Lion app" />
             </div>
 
         </section>
 
-        <section className="tl__section" aria-label="Risk Mitigation & Future Roadmap">
-          <h2 className="tl__sectionTitle">05. Risk Mitigation & Future Roadmap</h2>
-          <p><strong>Current Strategy:</strong> We transitioned from physical fountain stickers (a sticker saying “fountain 1” on physical fountain) to an <strong>interactive digital map</strong> with photo-references of each fountain.</p>
-          <p><strong>Crowdsourcing:</strong> Implementing a "Verification" system to ensure crowdsourced data remains accurate even as student traffic fluctuates.</p>
-        </section>
-
-        <section className="tl__section" aria-label="Technical Stack & Contributions">
-          <h2 className="tl__sectionTitle">Technical Stack & Contributions</h2>
-          <ul className="tl__list">
-            <li><strong>Design:</strong> Figma (Low-to-High Fid), Journey Mapping, Storyboarding.</li>
-            <li><strong>Frontend:</strong> React/JavaScript (Query &amp; Individual Fountain Pages).</li>
-            <li><strong>Backend:</strong> Firebase for real-time rating updates.</li>
-            <li><strong>Testing:</strong> User testing &amp; Smoke-and-Mirrors validation.</li>
-          </ul>
-        </section>
 
         <section className="tl__section" aria-label="What I did">
           <h2 className="tl__sectionTitle">My Role</h2>
           <ul className="tl__list">
-            <li>Pitched the winning project concept from a pool of 40 internal team proposals.</li>
-            <li>Conducted smoke-and-mirrors prototyping to gage app demand (51 responses in 24 hours).</li>
-            <li>Designed two key pages using Figma (home page, map page) and implemented frontend for fountain query page and fountain details page.</li>
-            <li>Conducted targeted user testing and synthesized feedback into actionable design changes.</li>
+            <li>Designed the main page and other key pages in the consolidation project</li>
+            <li>Search Engine Optimization (SEO) improvements for better site visibility and increased user traffic.</li>
+            <li>Utilized Google Analytics to monitor site performance and inform design decisions.</li>
           </ul>
         </section>
 
-        <div className="tl__videoContainer">
-            <iframe 
-              width="100%" 
-              height="480" 
-              src="https://www.youtube.com/embed/5AcqNHnTUBc" 
-              title="Thirsty Lion Demo Video"
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen>
-            </iframe>
-          </div>
+        
         </main>
       </div>
     </>

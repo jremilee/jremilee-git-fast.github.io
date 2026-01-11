@@ -986,6 +986,7 @@ body {
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
+  background-color: var(--bg);
 }
 
 .tl__header {
@@ -1028,6 +1029,12 @@ body {
   font-size: 24px;
   font-weight: 600;
   margin: 40px 0 12px;
+}
+
+.tl__subtitleD{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px 0 10px;
 }
 
 
@@ -1090,4 +1097,63 @@ body {
   .tl__img2 img {
     width: 100%;
   }
+}
+
+/* SHARP project styles */
+.sharpPage {
+  padding: 28px 18px 60px;
+}
+.sharp__header {
+  text-align: left;
+  max-width: 880px;
+  margin: 0 auto 18px;
+}
+.sharp__title {
+  font-size: 28px;
+  margin: 0 0 6px;
+}
+.sharp__lead {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.sharp__section {
+  max-width: 880px;
+  margin: 24px auto;
+}
+.sharp__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
+.sharp__img img {
+  width: 100%;
+  max-width: 880px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+/* small screens: full width images */
+@media (max-width: 760px) {
+  .sharp__img img { width: 100%; max-width: 100%; }
+}
+
+/* Thirsty Lion banner: full-bleed, fixed 60px height (cropped) */
+.tl__bannerContainer {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tl__banner {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
