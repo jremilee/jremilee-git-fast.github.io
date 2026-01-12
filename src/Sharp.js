@@ -19,14 +19,26 @@ export default function Sharp() {
         </header>
 
         <div className="tl__bannerContainer">
-          <video src="/videos/sharp-video-omma2.mp4" alt="Sharp Web Consolidation Banner" className="tl__banner" autoPlay loop muted />
+          <video src="/videos/sharp-omma2-frame.mp4" alt="Sharp Web Consolidation Banner" className="tl__banner" autoPlay loop muted />
         </div>
-          
+        
+        <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>
+        
+        <section className="tl__section tl__spacedBottom" aria-label="What I did">
+          <h3><strong>My Role:</strong> </h3> 
+          <ul className="tl__list">
+            <li>Designed the main page and other key pages in the consolidation project</li>
+            <li>Search Engine Optimization (SEO) improvements for better site visibility and increased user traffic.</li>
+            <li>Utilized Google Analytics to monitor site performance and inform design decisions.</li>
+          </ul>
+        </section>
+
         <section className="tl__section" aria-label="Project Overview">
-          <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>
-          <p><strong>The Problem:</strong> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 
+          <h2><strong>The Problem</strong> </h2> 
+          <p> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 
             Sharp’s SBS site and Sharp Business site had pages with mostly identical content. However, there was still some SBS-specific content that was not posted on the business site.</p>
-          <p><strong>Our Solution:</strong> <br/> 1. SBS-specific content was edited to be generalized and suitable for posting on the business site.  
+          <h2><strong>Our Solution</strong> </h2> 
+          <p> 1. SBS-specific content was edited to be generalized and suitable for posting on the business site.  
             <br/> 2. The four SBS-specific pages would be consolidated into a single SBS page on the business site.</p>
           <p>Team: Sharp Marketing Team </p>
 
@@ -88,16 +100,6 @@ export default function Sharp() {
               <img src="/images/sharp-googleanalytics.png" alt="Google Analytics report showing Sharp site traffic improvements" />
             </div>
 
-        </section>
-
-
-        <section className="tl__section" aria-label="What I did">
-          <h2 className="tl__sectionTitle">My Role</h2>
-          <ul className="tl__list">
-            <li>Designed the main page and other key pages in the consolidation project</li>
-            <li>Search Engine Optimization (SEO) improvements for better site visibility and increased user traffic.</li>
-            <li>Utilized Google Analytics to monitor site performance and inform design decisions.</li>
-          </ul>
         </section>
 
         

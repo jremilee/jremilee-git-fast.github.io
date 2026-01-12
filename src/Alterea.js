@@ -31,7 +31,6 @@ export default function Alterea() {
               <li>Designed actionable UI fixes for both gameplay and the teacher dashboard based on player feedback.</li>
               <li>Developed an onboarding and gameplay guide used by over 600+ teachers, 
                 reducing onboarding friction and improving classroom integration. </li>
-              
             </ul>
 
         </section>

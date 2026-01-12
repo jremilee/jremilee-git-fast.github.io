@@ -1,6 +1,34 @@
 // Miai.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
+
+function Slideshow({ images = [] }) {
+  const [index, setIndex] = useState(0);
+
+  if (!images || images.length === 0) return null;
+
+  const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
+  const next = () => setIndex((i) => (i + 1) % images.length);
+
+  return (
+    <div className="slideshow">
+      <button className="slideshow__arrow slideshow__arrow--left" aria-label="Previous" onClick={prev}>&larr;</button>
+      <img className="slideshow__img" src={images[index]} alt={`Slide ${index + 1}`} />
+      <button className="slideshow__arrow slideshow__arrow--right" aria-label="Next" onClick={next}>&rarr;</button>
+
+      <div className="slideshow__dots" aria-hidden="false">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            className={`slideshow__dot ${i === index ? 'slideshow__dot--active' : ''}`}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Miai() {
   useEffect(() => {
@@ -15,7 +43,7 @@ export default function Miai() {
 
         <header className="tl__header">
           <h1 className="tl__title">MIAI</h1>
-          <p className="tl__subtitle">UX Design | Game Design | Prototyping</p>
+          <p className="tl__subtitle">Wireframing | Game Design | Prototyping</p>
         </header>
 
         <div className="tl__bannerContainer">
@@ -25,33 +53,57 @@ export default function Miai() {
         <section className="tl__section" aria-label="Project Overview">
           <h2 className="tl__sectionTitle"><p className="tl__subtitle">Human or AI? A Turing-style interrogation game</p></h2>
 
+          <p><strong>Team:</strong> June Lee, Blaire Kim, Charlette Huang </p>
+
           <p><strong>Overview:</strong> Single-player 2D PvE interrogation game for PC. The Inquisitor (INQ) interrogates three suspects. Two suspects are AI-controlled; one is controlled by a Puppeteer (PUP). Only the culprit and the PUP may lie. The INQ must identify the culprit and the hijacked AIC. The PUP must mimic AI behavior to mislead the INQ while solving the case.</p>
+          
         </section>
+        <h2 className="tl__sectionTitle-vid">2.5D Prototype</h2>
+        <div className="tl__img2" aria-label="MIAI project video">
+          <video src="/images/miai-video.mp4" className="tl__video" controls />
+        </div>
 
         <section className="tl__section" aria-label="Design challenge">
           <h2 className="tl__sectionTitle">Design Challenge</h2>
           <ul className="tl__list">
             <li>Design the Puppeteer POV interface</li>
-            <li>Create an immersive 2D experience despite the original 2.5D prototype</li>
+            <li>Create an immersive 2D experience despite the original 2.5D prototype (executive decision made to change to 2D instead.)</li>
             <li>Provide easy access to chat log, incident summary, and suspect profiles</li>
           </ul>
         </section>
 
-        <section className="tl__section" aria-label="Style guide">
+        <section className="tl__section tl__twoCol" aria-label="Style guide">
           <h2 className="tl__sectionTitle">Developing Style Guide</h2>
-          <p className="tl__list">Typeface exploration (sci-fi, futuristic, pixel), pixel art integration, and a readable body face for a text-heavy experience. Color palette chosen with the art team to match the game's tone.</p>
 
-          <div className="tl__img" aria-label="Style guide preview">
-            <img src="/images/miai-style.png" alt="Style guide and typeface samples" />
+          <div className="tl__twoColInner">
+            <div className="tl__col">
+              <div className="tl__img" aria-label="Style guide preview">
+                <img src="/images/miai-1.png" alt="Style guide and typeface samples" />
+              </div>
+            </div>
+
+            <div className="tl__col">
+              <ol className="tl__list">
+                <li>received typeface preferences from art team (“sci-fi”, “futuristic”, “pixel”)</li>
+                <li>researched and compiled pixel and sci-fi typeface options free for commercial use</li>
+                <li>Incorporated pixel art created by the art team to gauge the visual compatibility of the typeface</li>
+                <li>Picked out 3 different header typefaces (one pixel, and two non-pixel) and compatible body typeface that is easy to read (game is text heavy)</li>
+                <li>Chose color palette in collaboration with art team.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div className="tl__img" aria-label="Interface sketches">
+            <img src="/images/miai-3.png" alt="Interface sketches and brainstormed formats" />
           </div>
         </section>
 
         <section className="tl__section" aria-label="Interface design">
           <h2 className="tl__sectionTitle">Designing the Puppeteer Interface</h2>
-          <p className="tl__list">Inspired by video conferencing layouts. The Puppeteer receives a dedicated screen among the AIC lineup; chat and info panels are surfaced constantly in a tri-fold layout for quick reference.</p>
+          <p className="tl__list">Inspired by video conferencing layouts, the Puppeteer receives a dedicated screen among the AIC lineup; chat and info panels are surfaced constantly in a tri-fold layout for quick reference.</p>
 
-          <div className="tl__img2" aria-label="Interface sketches">
-            <img src="/images/miai-layouts.png" alt="Interface sketches and brainstormed formats" />
+          <div className="tl__img" aria-label="Interface sketches">
+            <img src="/images/miai-4.png" alt="Interface sketches and brainstormed formats" />
           </div>
         </section>
 
@@ -59,38 +111,62 @@ export default function Miai() {
           <h2 className="tl__sectionTitle">Drafts & Iterations</h2>
 
           <h3 className="tl__subhead">Draft 1 — Trifold</h3>
-          <p>The tri-fold design places chat on the right for left-to-right reading of dialogue, while incident summary and suspect profiles remain immediately available.</p>
+          <p className="tl__list"><strong>Challenge: </strong>The chat log and info packet were easily accessible via buttons on the screen.  
+            However, the game play required almost constant access of the chat log and having to constantly 
+            open and close the log would be cumbersome.</p><br/>
+
+          <p className="tl__list"><strong>Solution: </strong>We transitioned to a tri-fold design to allow for constant access to both the chat log, incident summary, 
+            and the suspect profiles. The chat log was placed on the right to allow for easy reading of “left to right” 
+            from the AIC dialogue in the center of the screen.</p><br/>
+
+          <div className="tl__img2" aria-label="Interface sketches">
+            <img src="/images/trifold-1.png" alt="Interface sketches and brainstormed formats" />
+          </div>
 
           <h3 className="tl__subhead">Draft 2 — INQ left panel</h3>
-          <p>Moving the INQ to a left panel creates a clear boundary with the AICs, adds timers, chat filters, and gives space to highlight the active speaker.</p>
+
+          <p className="tl__list"><strong>Edits: </strong>INQ moved to the left panel to create a clear boundary between the INQ and AICs. 
+          Later, added a round timer, response timer, chat filter, and other features for smoother play.</p>
+
+          <div className="tl__img2" aria-label="Final mockup">
+            <img src="/images/trifold-2.png" alt="Final Puppeteer interface mockup" />
+          </div>
 
           <h3 className="tl__subhead">Draft 3 & 4 — 3 AIC layout & smoother transitions</h3>
-          <p>Reorganized AIC placement to allow larger widgets and smoother transitions when targeting single or multiple AICs.</p>
+
+          <p className="tl__list"><strong>Edits: </strong>Two frames were created to alternate between 
+          when the INQ asked a question to one AIC vs all of the AIC.  This allows us to highlight the specific 
+          AIC talking for “to one AIC” rounds and increase dialogue space. </p>
+
+          <div className="tl__img2" aria-label="Interface sketches">
+            <img src="/images/trifold-3.png" alt="Interface sketches and brainstormed formats" />
+          </div>
+
         </section>
 
         <section className="tl__section" aria-label="Final mockup">
-          <h2 className="tl__sectionTitle">Final Draft</h2>
-          <p className="tl__list">Finalized a centered fold for the three AICs, persistent chat and summary panels, and visual cues for the targeted AIC to maintain player orientation between rounds.</p>
+          <h2 className="tl__sectionTitle">Final Draft of All Pages</h2>
 
-          <div className="tl__img" aria-label="Final mockup">
-            <img src="/images/miai-final.png" alt="Final Puppeteer interface mockup" />
+          <div className="tl__img" aria-label="Interface sketches">
+            <Slideshow images={[
+              '/images/miai-6.png',
+              '/images/miai-7.png',
+              '/images/miai-8.png',
+              '/images/miai-9.png',
+              '/images/miai-10.png',
+              '/images/miai-11.png',
+              '/images/miai-12.png',
+              '/images/miai-13.png'
+            ]} />
           </div>
         </section>
 
-        <section className="tl__section" aria-label="Testing and launch">
-          <h2 className="tl__sectionTitle">Testing</h2>
-          <p>Prototype playtests validated the tri-fold access pattern and the clarity of the Puppeteer cues. Project launched in summer 2025.</p>
+        <section className="tl__section tl__centerBottomPad" aria-label="Testing and launch">
+          <h2 className="tl__sectionTitle">Project launched in summer 2025</h2>
+          <p>Prototype playtests validated the tri-fold access pattern and the clarity of the Puppeteer cues. </p>
           <p>Playable demo: <a href="https://miai.dev/game" target="_blank" rel="noreferrer">miai.dev/game</a></p>
         </section>
 
-        <section className="tl__section" aria-label="What I did">
-          <h2 className="tl__sectionTitle">My Role</h2>
-          <ul className="tl__list">
-            <li>Developed Puppeteer POV interface design and prototypes.</li>
-            <li>Collaborated with art team on typeface and palette selection.</li>
-            <li>Conducted prototype playtests and iterated on interaction flow.</li>
-          </ul>
-        </section>
 
         </main>
       </div>

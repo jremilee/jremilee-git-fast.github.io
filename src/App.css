@@ -1084,12 +1084,18 @@ body {
   margin: 40px 0 12px;
 }
 
+.tl__sectionTitle-vid {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 12px;
+  text-align: center;
+}
+
 .tl__subtitleD{
   font-size: 20px;
   font-weight: 600;
   margin: 0px 0 10px;
 }
-
 
 .tl__list {
   margin: 0;
@@ -1143,6 +1149,18 @@ body {
   margin: 5px auto; /* center horizontally */
 }
 
+/* Video styling for tl__img2 containers */
+.tl__img2 .tl__video,
+.tl__video {
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 7px;
+  margin: 8px auto;
+  box-sizing: border-box;
+}
+
 /* Side-by-side image layout for paired screenshots */
 .tl__img--sideBySide {
   display: flex;
@@ -1158,6 +1176,66 @@ body {
   height: auto;
   display: block;
   border-radius: 8px;
+}
+
+/* Slideshow styles */
+.slideshow{
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slideshow__img{
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.slideshow__arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.slideshow__arrow--left{ left: 8px; }
+.slideshow__arrow--right{ right: 8px; }
+.slideshow__dots{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.slideshow__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 2px; /* make square with slightly rounded corners */
+  background: rgba(255,255,255,0.6);
+  border: none;
+  cursor: pointer;
+}
+.slideshow__dot--active{
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.08) inset;
+}
+
+/* MIAI page: increase top padding for h3 headings */
+#miai h3,
+#miai .tl__subhead {
+  padding-top: 16px;
 }
 
 @media (max-width: 760px) {
@@ -1235,6 +1313,11 @@ body {
   box-sizing: border-box;
 }
 
+/* Shorter banner specifically for the Sharp page */
+#sharp .tl__bannerContainer {
+  height: 390px;
+  max-height: 390px;
+}
 .tl__banner {
   width: 100%;
   height: 100%;
@@ -1293,6 +1376,11 @@ body {
   align-items: flex-start;
 }
 
+/* Sharp page: add extra space after the "What I did" section so "The Problem" sits 20px lower */
+#sharp .tl__spacedBottom {
+  margin-bottom: 50px;
+}
+
 .tl__twoCol .tl__col{
   flex: 1;
 }
@@ -1313,4 +1401,16 @@ body {
     flex-direction: column;
     gap: 18px;
   }
+}
+
+/* Center text and increase bottom padding for testing/launch sections on project pages */
+#miai .tl__centerBottomPad {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+/* Ensure links inside are centered too */
+#miai .tl__centerBottomPad a {
+  display: inline-block;
 }
