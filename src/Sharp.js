@@ -12,15 +12,16 @@ export default function Sharp() {
       <div className="tlPage">
         <main className="content" id="sharp">
 
-        <div className="tl__bannerContainer">
-          <img src="/images/sharp-banner.png" alt="Sharp Web Consolidation Banner" className="tl__banner"/>
-        </div>
-            
+
         <header className="tl__header">
           <h1 className="tl__title">SHARP Web Consolidation</h1>
           <p className="tl__subtitle">UI Design | SEO | Google Analytics</p>  
         </header>
 
+        <div className="tl__bannerContainer">
+          <video src="/videos/sharp-video-omma2.mp4" alt="Sharp Web Consolidation Banner" className="tl__banner" autoPlay loop muted />
+        </div>
+          
         <section className="tl__section" aria-label="Project Overview">
           <h2 className="tl__sectionTitleD"><p className="tl__subtitle"> Sharp Electronics wanted to merge their two sites: Sharp Business for dealers, and Sharp SBS for Sharp’s direct sales division.  </p></h2>
           <p><strong>The Problem:</strong> The sites were redundant and hurt SEO ranking by competing with one another. Customers were also confused about which site to visit. 

@@ -13,17 +13,17 @@ export default function Miai() {
       <div className="tlPage">
         <main className="content" id="miai">
 
+        <header className="tl__header">
+          <h1 className="tl__title">MIAI</h1>
+          <p className="tl__subtitle">UX Design | Game Design | Prototyping</p>
+        </header>
+
         <div className="tl__bannerContainer">
           <img src="/images/miai-banner.webp" alt="MIAI Puppeteer Interface Banner" className="tl__banner"/>
         </div>
 
-        <header className="tl__header">
-          <h1 className="tl__title">MIAI</h1>
-          <p className="tl__subtitle">UX Design | System Design | Prototyping</p>
-        </header>
-
         <section className="tl__section" aria-label="Project Overview">
-          <h2 className="tl__sectionTitle"><p className="tl__subtitleD">Human or AI? A Turing-style interrogation game</p></h2>
+          <h2 className="tl__sectionTitle"><p className="tl__subtitle">Human or AI? A Turing-style interrogation game</p></h2>
 
           <p><strong>Overview:</strong> Single-player 2D PvE interrogation game for PC. The Inquisitor (INQ) interrogates three suspects. Two suspects are AI-controlled; one is controlled by a Puppeteer (PUP). Only the culprit and the PUP may lie. The INQ must identify the culprit and the hijacked AIC. The PUP must mimic AI behavior to mislead the INQ while solving the case.</p>
         </section>

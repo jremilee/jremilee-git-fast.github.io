@@ -1,6 +1,7 @@
 // Techspace.js
 import React, { useEffect } from "react";
 import Nav from "./Nav";
+import "./Techspace.css";
 
 export default function Techspace() {
   useEffect(() => {
@@ -13,74 +14,21 @@ export default function Techspace() {
       <div className="tlPage">
         <main className="content" id="techspace">
 
-        <div className="tl__bannerContainer">
-          <img src="/images/techspace-banner.png" alt="TechSpace banner" className="tl__banner"/>
-        </div>
-
         <header className="tl__header">
           <h1 className="tl__title">TechSpace (for the girls)</h1>
           <p className="tl__subtitle">Frontend Implementation | React | Hackathon Project</p>
         </header>
 
+        <div className="tl__bannerContainer">
+          <video src="/videos/techspace-banner.mp4" alt="TechSpace banner" className="tl__banner" autoPlay loop muted />
+        </div>
+
         <section className="tl__section" aria-label="Project Overview">
-          <h2 className="tl__sectionTitle"><p className="tl__subtitleD">A supportive community platform for women in tech.</p></h2>
+          <h2 className="tl__sectionTitle"><p className="tl__subtitle"> A space-themed “gamified Reddit” that creates a safe, welcoming community for girls in tech. </p></h2>
 
           <p><strong>My role:</strong> Designed and implemented the frontend for the team’s project using React during a 24-hour DivHacks hackathon.</p>
           <p><strong>Skills / Tools:</strong> HTML, CSS, JavaScript, React, Tailwind, Axios</p>
 
-          <div className="tl__img" aria-label="Overview image">
-            <img src="/images/techspace-landing.png" alt="TechSpace landing page mockup" />
-          </div>
-        </section>
-
-        <section className="tl__section" aria-label="Inspiration">
-          <h2 className="tl__sectionTitle">Inspiration</h2>
-          <p>
-            TechSpace was created to provide women a stigma-free place to share struggles,
-            swap tools, and feel seen—especially around mental health. The Space supports
-            all stages of career growth by connecting users through topic-based "planet"
-            threads and lightweight moderation.
-          </p>
-        </section>
-
-        <section className="tl__section" aria-label="What it does">
-          <h2 className="tl__sectionTitle">What it does</h2>
-          <p className="tl__list">
-            A SpacePage displays topic planets (similar to forum threads). Users post
-            publicly or anonymously, read and sort comments, and add their own. Built-in
-            moderation, crisis resources, and report/block tools keep the space safe.
-          </p>
-
-          <div className="tl__img" aria-label="Topic planets screenshot">
-            <img src="/images/techspace-planets.png" alt="Topic planets and thread view mockup" />
-          </div>
-        </section>
-
-        <section className="tl__section" aria-label="How we built it">
-          <h2 className="tl__sectionTitle">How we built it</h2>
-          <p>
-            UI mockups were designed in Figma. Frontend used React + Tailwind + Axios.
-            Backend used FastAPI, with Firebase Auth for login and Firestore for data
-            storage (threads, comments, profiles).
-          </p>
-
-          <div className="tl__img2" aria-label="Figma screenshots">
-            <img src="/images/techspace-figma.png" alt="Figma designs for login and thread pages" />
-          </div>
-        </section>
-
-        <section className="tl__section" aria-label="Next steps">
-          <h2 className="tl__sectionTitle">What's next</h2>
-          <p className="tl__list">
-            Planned features include live audio rooms on each planet, mentor matching,
-            AI-assisted moderation, multilingual support, reactions/notifications,
-            search (Algolia/Meilisearch), a zoomable SpacePage canvas, and a mobile app
-            with offline-first posting.
-          </p>
-        </section>
-
-        <section className="tl__section" aria-label="Video Demo">
-          <h2 className="tl__sectionTitle">Demo</h2>
           <div className="tl__videoContainer">
             <iframe
               width="100%"
@@ -92,19 +40,68 @@ export default function Techspace() {
               allowFullScreen>
             </iframe>
           </div>
+
         </section>
 
-        <section className="tl__section" aria-label="What I did">
-          <h2 className="tl__sectionTitle">My Role</h2>
-          <ul className="tl__list">
-            <li>Designed UI in Figma for login, landing, and thread pages.</li>
-            <li>Implemented frontend in React, integrated Tailwind and Axios.</li>
-            <li>Connected Firebase Auth and Firestore for authentication and data.</li>
-            <li>Focused on accessible, clear thread interactions and lightweight moderation tools.</li>
-          </ul>
+        <section className="tl__section" aria-label="Inspiration">
+          <h2 className="tl__sectionTitle">Inspiration</h2>
+          <p>
+            We’ve been the “only” in the room. TechSpace was born to give women, an underrepresented group 
+            in tech a safe, stigma-free place to share struggles, swap tools, and feel seen—especially around 
+            mental health. No matter what part of their career journey, our TechSpace helps women connect with one 
+            another and support each other through both personal and professional growth.
+          </p>
         </section>
+
+        <section className="tl__section" aria-label="What it does">
+          <h2 className="tl__sectionTitle">What it does</h2>
+          <p>
+            A SpacePage displays topic planets (like Reddit threads). Users post
+            publicly or anonymously, read and sort comments, and add their own. Built-in
+            moderation, crisis resources, and report/block tools keep the space safe.
+          </p>
+
+        </section>
+
+        <section className="tl__section" aria-label="How we built it">
+          <h2 className="tl__sectionTitle">How we built it</h2>
+          <p>
+            I used Figma to design out login pages, landing page, and thread pages. 
+            For frontend, we used React + Tailwind + Axios.
+            For backend, we used FastAPI, with Firebase Auth for login and Firestore for data
+            storage (threads, comments, profiles).
+          </p>
+
+          <div className="tl__img2" aria-label="Figma screenshots">
+            <img src="/images/techspace-1.png" alt="Figma designs for login and thread pages" />
+          </div>
+
+
+          <div className="tl__img2" aria-label="Topic planets screenshot">
+            <img src="/images/techspace-2.png" alt="Topic planets and thread view mockup" />
+          </div>
+
+        </section>
+
+        <section className="tl__section" aria-label="Next steps">
+          <h2 className="tl__sectionTitle">What's Next for TechSpace?</h2>
+          <p className="tl__list">
+            Planned features include live audio rooms on each planet, mentor matching,
+            AI-assisted moderation, multilingual support, reactions/notifications,
+            search (Algolia/Meilisearch), a zoomable SpacePage canvas, and a mobile app
+            with offline-first posting.
+          </p>
+        </section>
+
 
         </main>
+
+        <footer className="tl__footer">
+          <div className="tl__footerInner">
+            <a className="tl__linkBtn" href="https://devpost.com/software/techspace-for-girls" target="_blank" rel="noopener noreferrer">See hackathon entry</a>
+          </div>
+        </footer>
+
       </div>
     </>
   );

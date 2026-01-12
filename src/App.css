@@ -399,6 +399,8 @@ body {
     padding-top: 10px;
   }
 
+/* small wrapper placeholder removed; specific white-banner styles defined below */
+
 /* MIAI page styles */
 .miaiPage .miai__header{
   padding-top: 40px;
@@ -1073,7 +1075,7 @@ body {
 }
 
 .tl__section {
-  margin: 24px 0 28px;
+  margin: 12px 0 12px;
 }
 
 .tl__sectionTitle {
@@ -1107,6 +1109,11 @@ body {
   box-sizing: border-box;
 }
 
+/* Specific spacing for alterea-1 image */
+.tl__img--spaced{
+  margin-bottom: 30px;
+}
+
 .tl__img img {
   width: 100%;
   max-width: 100%;
@@ -1136,17 +1143,43 @@ body {
   margin: 5px auto; /* center horizontally */
 }
 
+/* Side-by-side image layout for paired screenshots */
+.tl__img--sideBySide {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tl__img--sideBySide img {
+  width: 48%;
+  max-width: 48%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 @media (max-width: 760px) {
   .tl__imageGrid { grid-template-columns: 1fr; }
   .tl__img { 
     margin-top: 25px;
     margin-bottom: 16px;
   }
+  .tl__img--spaced { margin-bottom: 15px; }
   .tl__img img {
     width: 100%;
   }
   .tl__img2 img {
     width: 100%;
+  }
+  .tl__img--sideBySide {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tl__img--sideBySide img {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -1196,8 +1229,8 @@ body {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
-  height: 180px;
-  max-height: 180px;
+  height: 440px;
+  max-height: 440px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1207,4 +1240,77 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+/* White banner variant for Thirsty Lion: full-bleed white area with centered, vertically-fitting video */
+.tl__whiteBanner{
+  background: #ffffff;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tl__whiteBanner .tl__bannerWrapper{
+  width: 70%;
+  max-width: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.tl__whiteBanner .tl__banner{
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 760px){
+  .tl__whiteBanner .tl__bannerWrapper{
+    width: 20%;
+  }
+  .tl__whiteBanner .tl__banner{
+    height: 85%;
+  }
+}
+
+/*Alterea Page Styles*/
+
+/* Two-column Problems / Solutions layout */
+.tl__twoCol .tl__twoColInner{
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.tl__twoCol .tl__col{
+  flex: 1;
+}
+
+.tl__colTitle{
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tl__twoCol .tl__list li{
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px){
+  .tl__twoCol .tl__twoColInner{
+    flex-direction: column;
+    gap: 18px;
+  }
 }

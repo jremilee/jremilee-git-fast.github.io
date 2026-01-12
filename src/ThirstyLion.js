@@ -1,25 +1,61 @@
 // ThirstyLion.js
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 
 export default function ThirstyLion() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // attempt to play when entering view
+            const p = vid.play();
+            if (p && p.catch) p.catch(() => {});
+          } else {
+            // pause when out of view
+            try { vid.pause(); } catch (e) {}
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    obs.observe(vid);
+    return () => obs.disconnect();
+  }, []);
   return (
     <>
       <Nav />
       <div className="tlPage">
         <main className="content" id="thirstylion">
-          
-        <div className="tl__bannerContainer">
-          <img src="/images/thirstylion-banner.webp" alt="Thirsty Lion App Banner" className="tl__banner"/>
-        </div>
 
         <header className="tl__header">
           <h1 className="tl__title">Thirsty Lion</h1>
           <p className="tl__subtitle">UI Design | Prototyping | Frontend Development</p>  
         </header>
+
+          
+        <div className="tl__bannerContainer tl__whiteBanner">
+          <div className="tl__bannerWrapper">
+            <video
+              ref={videoRef}
+              src="/videos/thirstylion-retry.mp4"
+              className="tl__banner"
+              loop
+              muted
+              playsInline
+              preload="auto"
+            />
+          </div>
+        </div>
 
         <section className="tl__section" aria-label="Project Overview">
           <h2 className="tl__sectionTitle"><p className="tl__subtitleD"> A crowdsourced platform for real-time water fountain ratings at Columbia University. </p></h2>
